@@ -1,4 +1,4 @@
-package com.github.Naohiro2g.introductionmod;
+package com.github.mutusugu.introductionmod;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;

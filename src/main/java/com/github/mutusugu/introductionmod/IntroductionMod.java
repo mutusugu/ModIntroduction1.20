@@ -1,5 +1,6 @@
-package com.github.Naohiro2g.introductionmod;
+package com.github.mutusugu.introductionmod;
 
+import com.github.mutusugu.introductionmod.item.IntroductionItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
@@ -66,6 +67,9 @@ public class IntroductionMod
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
+
+        // アイテムレジストリをイベントパスに登録
+        IntroductionItems.register(modEventBus);
 
         // Register the Deferred Register to the mod event bus so blocks get registered
         BLOCKS.register(modEventBus);
