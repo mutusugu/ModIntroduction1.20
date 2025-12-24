@@ -332,7 +332,7 @@ java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent
 [2610月2025 14:46:11.100] [main/DEBUG] [net.minecraftforge.network.NetworkHooks/]: Loading Network data for FML net version: FML3
 [2610月2025 14:46:11.141] [main/DEBUG] [net.minecraftforge.fml.ModWorkManager/LOADING]: Using 8 threads for parallel mod-loading
 [2610月2025 14:46:11.155] [main/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLJavaModLanguageProvider/LOADING]: Loading FMLModContainer from classloader cpw.mods.modlauncher.TransformingClassLoader@3c79088e - got cpw.mods.cl.ModuleClassLoader@61f2c3f0
-[2610月2025 14:46:11.157] [main/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Creating FMLModContainer instance for com.github.Naohiro2g.introductionmod.IntroductionMod
+[2610月2025 14:46:11.157] [main/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Creating FMLModContainer instance for com.github.mutusugu.introductionmod.IntroductionMod
 [2610月2025 14:46:11.161] [main/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLJavaModLanguageProvider/LOADING]: Loading FMLModContainer from classloader cpw.mods.modlauncher.TransformingClassLoader@3c79088e - got cpw.mods.cl.ModuleClassLoader@61f2c3f0
 [2610月2025 14:46:11.161] [main/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Creating FMLModContainer instance for net.minecraftforge.common.ForgeMod
 [2610月2025 14:46:11.235] [modloading-worker-0/DEBUG] [net.minecraftforge.versions.forge.ForgeVersion/CORE]: Forge Version package package net.minecraftforge.versions.forge, Forge, version 47.4 from cpw.mods.modlauncher.TransformingClassLoader@3c79088e
@@ -346,8 +346,8 @@ java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent
 [2610月2025 14:46:11.242] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.4.0 Initialized
 [2610月2025 14:46:11.294] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.config.ConfigTracker/CONFIG]: Config file introductionmod-common.toml for introductionmod tracking
 [2610月2025 14:46:11.296] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Attempting to inject @EventBusSubscriber classes into the eventbus for introductionmod
-[2610月2025 14:46:11.301] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.github.Naohiro2g.introductionmod.IntroductionMod$ClientModEvents to MOD
-[2610月2025 14:46:11.305] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.github.Naohiro2g.introductionmod.Config to MOD
+[2610月2025 14:46:11.301] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.github.mutusugu.introductionmod.IntroductionMod$ClientModEvents to MOD
+[2610月2025 14:46:11.305] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.github.mutusugu.introductionmod.Config to MOD
 [2610月2025 14:46:11.354] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.config.ConfigTracker/CONFIG]: Config file forge-client.toml for forge tracking
 [2610月2025 14:46:11.354] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.config.ConfigTracker/CONFIG]: Config file forge-server.toml for forge tracking
 [2610月2025 14:46:11.355] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.ModLoadingContext/]: Attempted to register an empty config for type COMMON on mod forge

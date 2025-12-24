@@ -1,5 +1,7 @@
-package com.github.Naohiro2g.introductionmod;
+package com.github.mutusugu.introductionmod;
 
+import com.github.mutusugu.introductionmod.item.IntroductionTabs;
+import com.github.mutusugu.introductionmod.item.IntroductionmodItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
@@ -67,6 +69,12 @@ public class IntroductionMod
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
+        //　アイテムレジストリをイベントパスに登録
+        IntroductionmodItems.register(modEventBus);
+        // クリエイティブタブレジストリをイベントパスに登録
+        IntroductionTabs.register(modEventBus);
+
+
         // Register the Deferred Register to the mod event bus so blocks get registered
         BLOCKS.register(modEventBus);
         // Register the Deferred Register to the mod event bus so items get registered
@@ -99,11 +107,19 @@ public class IntroductionMod
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
-    {
-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
-            event.accept(EXAMPLE_BLOCK_ITEM);
-    }
 
+
+
+    {
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(IntroductionmodItems.RAW_ORIHALCON);
+            event.accept(IntroductionmodItems.ORHALCON_INGOT);
+            event.accept(IntroductionmodItems.OSUMIUMU);
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(EXAMPLE_BLOCK_ITEM);
+        }
+        }
+    }
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event)
