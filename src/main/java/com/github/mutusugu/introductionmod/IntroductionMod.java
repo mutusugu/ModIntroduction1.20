@@ -1,7 +1,8 @@
 package com.github.mutusugu.introductionmod;
 
+import com.github.mutusugu.introductionmod.block.IntroductionBlocks;
 import com.github.mutusugu.introductionmod.item.IntroductionTabs;
-import com.github.mutusugu.introductionmod.item.IntroductionmodItems;
+import com.github.mutusugu.introductionmod.item.IntroductionItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
@@ -54,14 +55,6 @@ public class IntroductionMod
     public static final RegistryObject<Item> EXAMPLE_ITEM = ITEMS.register("example_item", () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
             .alwaysEat().nutrition(1).saturationMod(2f).build())));
 
-    // Creates a creative tab with the id "examplemod:example_tab" for the example item, that is placed after the combat tab
-    public static final RegistryObject<CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("example_tab", () -> CreativeModeTab.builder()
-            .withTabsBefore(CreativeModeTabs.COMBAT)
-            .icon(() -> EXAMPLE_ITEM.get().getDefaultInstance())
-            .displayItems((parameters, output) -> {
-                output.accept(EXAMPLE_ITEM.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
-            }).build());
-
     public IntroductionMod(FMLJavaModLoadingContext context)
     {
         IEventBus modEventBus = context.getModEventBus();
@@ -70,9 +63,11 @@ public class IntroductionMod
         modEventBus.addListener(this::commonSetup);
 
         //　アイテムレジストリをイベントパスに登録
-        IntroductionmodItems.register(modEventBus);
+        IntroductionItems.register(modEventBus);
         // クリエイティブタブレジストリをイベントパスに登録
         IntroductionTabs.register(modEventBus);
+        // ブロックレジストリをイベントパスに登録
+        IntroductionBlocks.register(modEventBus);
 
 
         // Register the Deferred Register to the mod event bus so blocks get registered
@@ -112,9 +107,9 @@ public class IntroductionMod
 
     {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(IntroductionmodItems.RAW_ORIHALCON);
-            event.accept(IntroductionmodItems.ORHALCON_INGOT);
-            event.accept(IntroductionmodItems.OSUMIUMU);
+            event.accept(IntroductionItems.RAW_ORIHALCON);
+            event.accept(IntroductionItems.ORHALCON_INGOT);
+            event.accept(IntroductionItems.OSUMIUMU);
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(EXAMPLE_BLOCK_ITEM);
         }
